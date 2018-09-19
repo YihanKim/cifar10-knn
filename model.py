@@ -49,18 +49,18 @@ class KNearestNeighbor(object):
 			nearest_indices = distances.argsort()[:k]
 			nearest_distances = distances[nearest_indices]
 			
-			# List "neighbor_label" have form [5, 4, 8, 5, 1] (when k = 5), 
-			# and function should return 5 in that case.
-			neighbor_labels = self.ytr[nearest_indices]
+			# List "nearest_label" have form [3, 4, 8, 3, 1] (when k = 5), 
+			# and function should return 3 in that case.
+			nearest_labels = self.ytr[nearest_indices]
 			
-			# You have to implement strategy in case of neighbor_label have multiple majority.
+			# You have to implement strategy in case of nearest_label have multiple majority.
 			# (ex. top 5 nearest neighbors are [3, 3, 4, 9, 4])
 			# select predictions from prediction list 
 
 			# implement kNN using nearest_indices and nearest_distances below.
 			# ----------------------
 			# it only returns first nearest element.
-			Ypred[i] = neighbor_labels[0]
+			Ypred[i] = nearest_labels[0]
 			# ----------------------
 
 		return Ypred
